@@ -50,10 +50,6 @@ class Page
 
     public static function compareScore($a, $b)
     {
-        if ($a->getScore() == $b->getScore()) {
-            return 0;
-        }
-        //return ($a->getScore() < $b->getScore()) ? -1 : 1;
         return $a->getScore() - $b->getScore();
     }
 }
