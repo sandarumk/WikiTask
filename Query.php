@@ -3,6 +3,8 @@
 class Query
 {
 
+    public static $base_url = 'https://en.wikipedia.org///w/api.php?';
+
     public static function getCategoryMembers($category)
     {
         $url = self::constructQueryCategoryMembers($category);
@@ -12,7 +14,7 @@ class Query
 
     public static function constructQueryCategoryMembers($category)
     {
-        $url = 'https://en.wikipedia.org///w/api.php?';
+        $url = self::$base_url;
         $url .= 'action=query'.'&';
         $url .= 'format=json'.'&';
         $url .= 'list=categorymembers'.'&';
@@ -32,7 +34,7 @@ class Query
 
     public static function constructQuerygetArticleList($page_id)
     {
-        $url='https://en.wikipedia.org/w/api.php?';
+        $url = self::$base_url;
         $url .= 'action=query'.'&';
         $url .= 'format=json'.'&';
         $url .= 'prop=info%7Cextracts'.'&';
