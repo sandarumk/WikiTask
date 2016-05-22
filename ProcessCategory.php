@@ -27,7 +27,6 @@ if ($item_count === null||$item_count == 0){
     echo "No results found for the given category";
 }
 
-//$textStatistics = new DaveChild\TextStatistics\TextStatistics;
 $text_statistics = new TextStatistics;
 
 $pages = array();
@@ -56,13 +55,12 @@ if ($pages != null){
     usort($pages, "Page::compareScore");
     // output the resulting list as a table
     $html = '<table border="1">';
-// header row
+    // header row
     $html .= '<tr>';
     $html .= '<th>Wikipedia Page</th>';
     $html .= '<th>Readability Score</th>';
-
     $html .= '</tr>';
-// data rows
+    // data rows
     foreach( $pages as $wikipage){
         $html .= '<tr>';
         $html .= '<td><a href='.$wikipage->getUrl().'>'.$wikipage->getTitle().'</a></td>';
