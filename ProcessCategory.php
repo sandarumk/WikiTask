@@ -23,7 +23,7 @@ else{
 $category_members = Query::getCategoryMembers($category);
 
 $item_count = count($category_members);
-if ($item_count === null||$item_count == 0){
+if ($item_count === null or $item_count == 0){
     echo "No results found for the given category";
 }
 

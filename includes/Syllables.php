@@ -266,16 +266,19 @@ class Syllables
 
         // Should be no non-alpha characters and lower case
         $strWord = preg_replace('`[^A-Za-z]`', '', $strWord);
-        $strWord = Text::lowerCase($strWord, $strEncoding);
 
+        $strWord = Text::lowerCase($strWord, $strEncoding);
+      
         // Check for problem words
-        if (isset(self::$arrProblemWords[$strWord])) {
+        if ((self::$arrProblemWords[$strWord] === null)and isset(self::$arrProblemWords[$strWord])) {
             return self::$arrProblemWords[$strWord];
         }
+
         // Try singular
         $singularWord = Pluralise::getSingular($strWord);
+
         if ($singularWord != $strWord) {
-            if (isset(self::$arrProblemWords[$singularWord])) {
+            if (is_null(self::$arrProblemWords[$singularWord]) and isset(self::$arrProblemWords[$singularWord])) {
                 return self::$arrProblemWords[$singularWord];
             }
         }
@@ -360,6 +363,7 @@ class Syllables
         for ($i = 0; $i < $intWordCount; $i++) {
             $intSyllableCount += self::syllableCount($arrWords[$i], $strEncoding);
         }
+
         $averageSyllables = (Maths::bcCalc($intSyllableCount, '/', $intWordCount));
         return $averageSyllables;
     }
