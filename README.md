@@ -21,3 +21,7 @@ Only consider the first 50 articles in a category.
 The output will will be as follows for the "Help" category:
 
 ![alt text](https://github.com/sandarumk/WikiTask/blob/master/wiki.PNG)
+
+####Deployement
+http://sandarumk.rf.gd/Index.php
+
