@@ -12,8 +12,8 @@ The Readability accessing method is "Flesch reading ease" from "Flesch–Kincaid
 The formula is as follows:
 ```206.835 - 1.015 (total words/total sentences) - 84.6 (total syllables/ total words)```
 
-*0 - Difficult to read
-*100 - Easy to read
+0 - Difficult to read
+100 - Easy to read
 
 ####Limitations
 Only consider the first 50 articles in a category.
@@ -26,3 +26,7 @@ The output will will be as follows for the "Help" category:
 ####Deployment
 http://sandarumk.rf.gd/
 
+####Test Cases
+1. Category Name: "Physics" -> Shows 50 results in the table format
+2. Category Name: "Help"    -> Shows 7 results in the table format
+3. Category Name: "Sri Lanka" -> "No results found for the given category" message will be shown.
